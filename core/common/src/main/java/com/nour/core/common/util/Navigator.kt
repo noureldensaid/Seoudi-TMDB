@@ -1,4 +1,4 @@
-package com.nour.core.navigation
+package com.nour.core.common.util
 
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

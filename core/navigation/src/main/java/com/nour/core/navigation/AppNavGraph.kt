@@ -13,6 +13,7 @@ fun AppNavGraph(
     navController: NavHostController,
     isLoading: (show: Boolean) -> Unit,
     errorFlow: (error: Flow<ResponseState.Error>) -> Unit,
+    onRetry: (() -> Unit) -> Unit,
 ) {
     NavHost(
         navController = navController,
@@ -23,6 +24,7 @@ fun AppNavGraph(
             navController = navController,
             isLoading = isLoading,
             errorFlow = errorFlow,
+            onRetry = onRetry
         )
     }
 }
