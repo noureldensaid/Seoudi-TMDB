@@ -5,5 +5,7 @@
     <string name="no_products_was_found">No products was found</string>
     <string name="no_products_was_found_details">Try searching for something else or check back later.</string>
     <string name="no_internet">No internet connection</string>
+    <string name="loading">Loading…</string>
+    <string name="no_more_items_to_load">No more items to load</string>
     <string name="no_internet_details">Looks like your internet is on a coffee break!\nCheck your connection and try again.</string>
 </resources>

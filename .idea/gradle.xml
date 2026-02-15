@@ -19,6 +19,8 @@
             <option value="$PROJECT_DIR$/core/ui" />
             <option value="$PROJECT_DIR$/feature" />
             <option value="$PROJECT_DIR$/feature/moviesList" />
+            <option value="$PROJECT_DIR$/feature/moviesList/data" />
+            <option value="$PROJECT_DIR$/feature/moviesList/domain" />
             <option value="$PROJECT_DIR$/feature/moviesList/ui" />
           </set>
         </option>

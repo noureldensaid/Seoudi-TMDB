@@ -85,4 +85,9 @@ dependencies {
     implementation(project(":core:network"))
     implementation(project(":core:database"))
 
+    //moviesList
+    implementation(project(":feature:moviesList:data"))
+    implementation(project(":feature:moviesList:domain"))
+    implementation(project(":feature:moviesList:ui"))
+
 }
