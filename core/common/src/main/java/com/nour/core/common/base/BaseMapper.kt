@@ -1,0 +1,5 @@
+package com.nour.core.common.base
+
+interface BaseMapper<F, T> {
+    fun map(from: F): T
+}
