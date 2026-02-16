@@ -2,11 +2,10 @@ plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.serialization)
     alias(libs.plugins.ksp)
-    alias(libs.plugins.androidx.room)
 }
 
 android {
-    namespace = "com.nour.data"
+    namespace = "com.moviesList.data"
     compileSdk {
         version = release(36)
     }
@@ -33,10 +32,6 @@ android {
     }
 }
 
-room {
-    schemaDirectory("$projectDir/schemas")
-}
-
 dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
@@ -52,11 +47,7 @@ dependencies {
 
     implementation(libs.bundles.ktor)
 
-    implementation(libs.bundles.room)
-    ksp(libs.androidx.room.compiler)
-
     implementation(project(":core:common"))
     implementation(project(":core:network"))
-    implementation(project(":core:database"))
     implementation(project(":feature:moviesList:domain"))
 }

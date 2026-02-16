@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    namespace = "com.nour.ui"
+    namespace = "com.moviesList.ui"
     compileSdk {
         version = release(36)
     }
@@ -58,5 +58,8 @@ dependencies {
 
     implementation(project(":core:ui"))
     implementation(project(":core:common"))
+
     implementation(project(":feature:moviesList:domain"))
+
+    implementation(project(":feature:movieDetails:ui"))
 }

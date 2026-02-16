@@ -3,7 +3,7 @@ plugins {
 }
 
 android {
-    namespace = "com.nour.domain"
+    namespace = "com.moviesList.domain"
     compileSdk {
         version = release(36)
     }

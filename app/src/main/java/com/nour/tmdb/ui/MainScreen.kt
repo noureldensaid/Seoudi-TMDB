@@ -21,6 +21,8 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.compose.rememberNavController
 import com.nour.core.common.error.NetworkError
 import com.nour.core.common.result.ResponseState
+import com.nour.core.common.util.NavigationEvent
+import com.nour.core.common.util.Navigator
 import com.nour.core.common.util.ObserveAsEvents
 import com.nour.core.common.util.SnackbarAction
 import com.nour.core.common.util.SnackbarController
@@ -31,10 +33,14 @@ import com.nour.core.ui.components.snackBar.DefaultSnackbar
 import com.nour.core.ui.theme.AppTheme
 import com.nour.tmdb.R
 import kotlinx.coroutines.flow.flowOf
+import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.launch
+import org.koin.compose.koinInject
 
 @Composable
 fun MainScreen() {
+
+    val navigator: Navigator = koinInject()
 
     val context = LocalContext.current
 
@@ -81,6 +87,24 @@ fun MainScreen() {
                         duration = SnackbarDuration.Short
                     )
                 }
+            }
+        }
+    }
+
+    ObserveAsEvents(flow = navigator.navigationEvents.receiveAsFlow()) { navigationEvent ->
+        when (navigationEvent) {
+            is NavigationEvent.Navigate -> navController.navigate(navigationEvent.route) {
+                navigationEvent.popUpToRoute?.let {
+                    popUpTo(it) {
+                        inclusive = navigationEvent.inclusive
+                    }
+                }
+                launchSingleTop = navigationEvent.isSingleTop
+            }
+
+            is NavigationEvent.PopBackStack -> {
+                if (navigationEvent.route != null) navController.popBackStack(navigationEvent.route!!, navigationEvent.inclusive)
+                else navController.popBackStack()
             }
         }
     }

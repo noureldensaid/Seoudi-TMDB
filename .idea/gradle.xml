@@ -18,6 +18,10 @@
             <option value="$PROJECT_DIR$/core/network" />
             <option value="$PROJECT_DIR$/core/ui" />
             <option value="$PROJECT_DIR$/feature" />
+            <option value="$PROJECT_DIR$/feature/movieDetails" />
+            <option value="$PROJECT_DIR$/feature/movieDetails/data" />
+            <option value="$PROJECT_DIR$/feature/movieDetails/domain" />
+            <option value="$PROJECT_DIR$/feature/movieDetails/ui" />
             <option value="$PROJECT_DIR$/feature/moviesList" />
             <option value="$PROJECT_DIR$/feature/moviesList/data" />
             <option value="$PROJECT_DIR$/feature/moviesList/domain" />

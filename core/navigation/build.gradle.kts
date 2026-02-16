@@ -54,7 +54,5 @@ dependencies {
     implementation(project(":core:ui"))
     implementation(project(":core:common"))
     implementation(project(":feature:moviesList:ui"))
-//    implementation(project(":feature:details:ui"))
-//    implementation(project(":feature:saved:ui"))
-
+    implementation(project(":feature:movieDetails:ui"))
 }
