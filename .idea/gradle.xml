@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="GradleMigrationSettings" migrationVersion="1" />
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
@@ -10,6 +11,21 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/core" />
+            <option value="$PROJECT_DIR$/core/common" />
+            <option value="$PROJECT_DIR$/core/database" />
+            <option value="$PROJECT_DIR$/core/navigation" />
+            <option value="$PROJECT_DIR$/core/network" />
+            <option value="$PROJECT_DIR$/core/ui" />
+            <option value="$PROJECT_DIR$/feature" />
+            <option value="$PROJECT_DIR$/feature/movieDetails" />
+            <option value="$PROJECT_DIR$/feature/movieDetails/data" />
+            <option value="$PROJECT_DIR$/feature/movieDetails/domain" />
+            <option value="$PROJECT_DIR$/feature/movieDetails/ui" />
+            <option value="$PROJECT_DIR$/feature/moviesList" />
+            <option value="$PROJECT_DIR$/feature/moviesList/data" />
+            <option value="$PROJECT_DIR$/feature/moviesList/domain" />
+            <option value="$PROJECT_DIR$/feature/moviesList/ui" />
           </set>
         </option>
       </GradleProjectSettings>
