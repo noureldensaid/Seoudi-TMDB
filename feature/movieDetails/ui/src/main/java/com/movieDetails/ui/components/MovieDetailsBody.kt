@@ -44,7 +44,7 @@ fun MovieDetailsBody(
         ) {
             Spacer(Modifier.height(16.dp))
 
-            MovieHeader(
+            MovieInfo(
                 title = movie.originalTitle.ifBlank { movie.title.orEmpty() },
                 tagline = movie.tagline,
                 releaseDate = movie.releaseDate,

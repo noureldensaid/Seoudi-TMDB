@@ -18,7 +18,7 @@ import com.nour.core.ui.components.text.DefaultText
 import com.nour.core.ui.theme.AppTheme
 
 @Composable
-fun MovieHeader(
+fun MovieInfo(
     title: String,
     tagline: String?,
     releaseDate: String,
@@ -64,9 +64,9 @@ fun MovieHeader(
 
 @Preview(showBackground = true)
 @Composable
-fun MovieHeaderPreview() {
+fun MovieInfoPreview() {
     AppTheme {
-        MovieHeader(
+        MovieInfo(
             title = "Sample Movie Title",
             tagline = "This is a sample tagline.",
             releaseDate = "2023-10-27",

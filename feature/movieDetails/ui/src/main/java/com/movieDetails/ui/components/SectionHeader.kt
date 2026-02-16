@@ -9,15 +9,19 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.nour.core.ui.R
 import com.nour.core.ui.components.text.DefaultText
 
 @Composable
 fun SectionHeader(
     title: String,
-    icon: androidx.compose.ui.graphics.vector.ImageVector
+    icon: ImageVector
 ) {
     Row(
         modifier = Modifier.fillMaxWidth(),
@@ -32,4 +36,13 @@ fun SectionHeader(
             color = MaterialTheme.colorScheme.onSurface
         )
     }
+}
+
+@Preview
+@Composable
+private fun SectionHeaderPreview() {
+    SectionHeader(
+        title = "Genres",
+        icon = ImageVector.vectorResource(id = R.drawable.ic_image_placeholder),
+    )
 }

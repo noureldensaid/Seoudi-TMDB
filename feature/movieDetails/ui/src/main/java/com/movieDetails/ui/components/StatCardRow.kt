@@ -20,6 +20,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.nour.core.ui.components.text.DefaultText
@@ -89,4 +90,15 @@ fun StatItem(
             color = MaterialTheme.colorScheme.onSurface,
         )
     }
+}
+
+@Preview
+@Composable
+private fun StatCardRowPreview() {
+    StatCardRow(
+        runtimeMin = "120 min",
+        rating = "8.5",
+        votes = "1200",
+        status = "Released"
+    )
 }

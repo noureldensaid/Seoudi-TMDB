@@ -29,7 +29,7 @@ fun MovieDetailsScreenRoot(
         onEvent(
             MovieDetailsScreenEvents.OnToggleFavorite(
                 state.movie.id,
-                !state.movie.isFavorite
+                state.movie.isFavorite.not()
             )
         )
     }
