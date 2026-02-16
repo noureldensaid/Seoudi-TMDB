@@ -62,14 +62,6 @@ dependencies {
     // Logging
     implementation(libs.timber)
 
-
-    // Testing
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
-    androidTestImplementation(platform(libs.androidx.compose.bom))
-    androidTestImplementation(libs.androidx.ui.test.junit4)
-
     // Debug / Release Configurations
     // Compose preview, tooling
     debugImplementation(libs.bundles.compose.debug)

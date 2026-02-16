@@ -39,5 +39,15 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
     
     implementation(libs.koin.android)
+
+    // Testing
+    testImplementation(kotlin("test"))
+    testImplementation(libs.junit)
+    testImplementation(libs.kotlinx.coroutines.test)
+    testImplementation(libs.mockk)
+    testImplementation(libs.truth)
+    testImplementation(libs.turbine)
+    testImplementation(libs.androidx.junit)
+
     implementation(project(":core:common"))
 }

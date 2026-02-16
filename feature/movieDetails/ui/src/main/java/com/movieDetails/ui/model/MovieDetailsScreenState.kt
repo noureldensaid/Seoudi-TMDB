@@ -6,5 +6,5 @@ import com.movieDetails.domain.model.MovieDetailsModel
 @Stable
 data class MovieDetailsScreenState(
     val movie: MovieDetailsModel = MovieDetailsModel(),
-    val isLoading: Boolean = false,
+    val isLoading: Boolean = true,
 )
