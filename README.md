@@ -90,9 +90,9 @@ Tools used:
 ## ScreenShots
 
 <img width="300"    alt="image" src="https://github.com/user-attachments/assets/a552a3c3-ce41-4a33-bc70-9a231baa6617" />
-<img width="300"   alt="image" src="https://github.com/user-attachments/assets/e5df339c-da17-434d-9b44-22265b1c1e85" />
 <img width="300"    alt="image" src="https://github.com/user-attachments/assets/02cd96ce-94c6-42a2-947c-128efb2c5331" />
-<img width="300"   alt="image" src="https://github.com/user-attachments/assets/cbc4fc95-4976-4ec6-b1c6-56f8658bb1a9" />
+<img width="300"   alt="image" src="https://github.com/user-attachments/assets/e5df339c-da17-434d-9b44-22265b1c1e85" />
+<img width="1000"   alt="image" src="https://github.com/user-attachments/assets/cbc4fc95-4976-4ec6-b1c6-56f8658bb1a9" />
 <img width="300"   alt="image" src="https://github.com/user-attachments/assets/a78faea4-4131-482a-805f-47a44f5a0bd6" />
 <img width="300"   alt="image" src="https://github.com/user-attachments/assets/180b9458-aee6-4fdf-9e5c-da7db44c7200" />
 
