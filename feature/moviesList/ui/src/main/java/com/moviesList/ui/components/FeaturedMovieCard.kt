@@ -81,8 +81,9 @@ fun FeaturedMovieCard(
                 Spacer(Modifier.height(6.dp))
 
                 Row(
+                    modifier= Modifier.fillMaxWidth(),
                     verticalAlignment = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.spacedBy(10.dp)
+                    horizontalArrangement = Arrangement.SpaceBetween
                 ) {
                     DefaultText(
                         text = "Release • ${movie.releaseDate}",

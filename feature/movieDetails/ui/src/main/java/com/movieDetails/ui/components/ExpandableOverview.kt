@@ -29,32 +29,37 @@ fun ExpandableOverview(
 ) {
     if (text.isBlank()) return
 
-    SectionHeader(title, Icons.AutoMirrored.Outlined.InsertDriveFile)
-
     var expanded by remember { mutableStateOf(false) }
 
-    ElevatedCard(
+    Column(
         modifier = Modifier.fillMaxWidth(),
-        shape = RoundedCornerShape(18.dp),
+        verticalArrangement = Arrangement.spacedBy(4.dp)
     ) {
-        Column(
-            modifier = Modifier.padding(14.dp),
-            verticalArrangement = Arrangement.spacedBy(8.dp)
+        SectionHeader(title, Icons.AutoMirrored.Outlined.InsertDriveFile)
+
+        ElevatedCard(
+            modifier = Modifier.fillMaxWidth(),
+            shape = RoundedCornerShape(18.dp),
         ) {
-            DefaultText(
-                text = text,
-                maxLines = if (expanded) Int.MAX_VALUE else 4,
-            )
-            TextButton(
-                modifier = Modifier.animateContentSize(),
-                onClick = { expanded = !expanded },
-                contentPadding = PaddingValues(horizontal = 8.dp, vertical = 0.dp)
+            Column(
+                modifier = Modifier.padding(14.dp),
+                verticalArrangement = Arrangement.spacedBy(8.dp)
             ) {
                 DefaultText(
-                    text = if (expanded) "Show less" else "Read more",
-                    fontSize = 13.sp,
-                    fontWeight = FontWeight.SemiBold,
+                    text = text,
+                    maxLines = if (expanded) Int.MAX_VALUE else 4,
                 )
+                TextButton(
+                    modifier = Modifier.animateContentSize(),
+                    onClick = { expanded = !expanded },
+                    contentPadding = PaddingValues(horizontal = 8.dp, vertical = 0.dp)
+                ) {
+                    DefaultText(
+                        text = if (expanded) "Show less" else "Read more",
+                        fontSize = 13.sp,
+                        fontWeight = FontWeight.SemiBold,
+                    )
+                }
             }
         }
     }
