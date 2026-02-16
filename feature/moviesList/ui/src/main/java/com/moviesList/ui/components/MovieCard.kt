@@ -20,7 +20,7 @@ fun MovieCard(
             onClick = onClick,
         )
     } else {
-        NormalMovieCard(
+        DefaultMoviesCard(
             modifier = modifier,
             movie = movie,
             onClick = onClick,

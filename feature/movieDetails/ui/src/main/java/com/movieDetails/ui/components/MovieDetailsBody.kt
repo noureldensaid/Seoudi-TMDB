@@ -10,7 +10,7 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.outlined.TrendingUp
+import androidx.compose.material.icons.automirrored.outlined.TrendingUp
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
@@ -30,8 +30,8 @@ fun MovieDetailsBody(
     Surface(
         modifier = modifier,
         shape = RoundedCornerShape(topStart = 26.dp, topEnd = 26.dp),
-        tonalElevation = 3.dp,
-        shadowElevation = 3.dp,
+        tonalElevation = 8.dp,
+        shadowElevation = 8.dp,
         color = MaterialTheme.colorScheme.background
     ) {
         Column(
@@ -54,7 +54,7 @@ fun MovieDetailsBody(
 
             ChipsSection(
                 title = "Genres",
-                icon = Icons.Outlined.TrendingUp,
+                icon = Icons.AutoMirrored.Outlined.TrendingUp,
                 values = movie.genres.values.toList()
             )
 

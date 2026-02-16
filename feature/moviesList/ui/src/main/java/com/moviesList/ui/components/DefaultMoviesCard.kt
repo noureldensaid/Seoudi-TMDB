@@ -25,7 +25,7 @@ import com.nour.core.ui.extensions.skipInteraction
 import com.nour.core.ui.theme.AppTheme
 
 @Composable
-fun NormalMovieCard(
+fun DefaultMoviesCard(
     modifier: Modifier = Modifier,
     movie: MovieModel,
     onClick: () -> Unit,
@@ -79,9 +79,9 @@ fun NormalMovieCard(
 
 @Preview
 @Composable
-fun NormalMovieCardPreview() {
+fun DefaultMoviesCardPreview() {
     AppTheme {
-        NormalMovieCard(
+        DefaultMoviesCard(
             movie = MovieModel(
                 id = 1,
                 overview = "This is a movie overview",

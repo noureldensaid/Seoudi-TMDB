@@ -1,6 +1,7 @@
 package com.movieDetails.ui.components
 
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material3.AssistChip
@@ -19,22 +20,24 @@ fun ChipsSection(
 ) {
     if (values.isEmpty()) return
 
-    SectionHeader(title, icon)
+    Column {
+        SectionHeader(title, icon)
 
-    FlowRow(
-        modifier = Modifier.fillMaxWidth(),
-        horizontalArrangement = Arrangement.spacedBy(8.dp),
-        verticalArrangement = Arrangement.spacedBy(8.dp),
-        maxItemsInEachRow = 3
-    ) {
-        values.forEach { text ->
-            AssistChip(onClick = {}, label = {
-                DefaultText(
-                    text = text,
-                    fontSize = 12.sp,
-                    fontWeight = FontWeight.Medium,
-                )
-            })
+        FlowRow(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.spacedBy(8.dp),
+            verticalArrangement = Arrangement.spacedBy(8.dp),
+            maxItemsInEachRow = 3
+        ) {
+            values.forEach { text ->
+                AssistChip(onClick = {}, label = {
+                    DefaultText(
+                        text = text,
+                        fontSize = 12.sp,
+                        fontWeight = FontWeight.Medium,
+                    )
+                })
+            }
         }
     }
 }
