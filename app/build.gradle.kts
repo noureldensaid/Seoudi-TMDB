@@ -90,4 +90,10 @@ dependencies {
     implementation(project(":feature:moviesList:domain"))
     implementation(project(":feature:moviesList:ui"))
 
+    //movieDetails
+    implementation(project(":feature:movieDetails:data"))
+    implementation(project(":feature:movieDetails:domain"))
+    implementation(project(":feature:movieDetails:ui"))
+
+
 }

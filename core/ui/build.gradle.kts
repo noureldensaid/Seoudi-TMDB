@@ -49,6 +49,7 @@ dependencies {
     implementation(libs.bundles.compose)
     debugImplementation(libs.bundles.compose.debug)
 
+    implementation(libs.coil.kt.coil.compose)
     implementation(libs.bundles.koin)
     ksp(libs.koin.ksp.compiler)
 }

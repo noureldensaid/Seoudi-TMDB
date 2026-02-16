@@ -2,17 +2,18 @@ package com.nour.core.database
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
-import com.nour.core.database.dao.FavoriteMovieDao
-import com.nour.core.database.entity.FavoriteMovieEntity
+import androidx.room.TypeConverters
+import com.nour.core.database.dao.MovieDetailsDao
+import com.nour.core.database.entity.MovieDetailsEntity
+import com.nour.core.database.typeConverters.Converters
 
 
 @Database(
-    entities = [
-        FavoriteMovieEntity::class,
-    ],
+    entities = [MovieDetailsEntity::class],
     version = 1,
     exportSchema = true
 )
-internal abstract class AppDatabase : RoomDatabase() {
-    abstract fun favoriteMovieDao(): FavoriteMovieDao
+@TypeConverters(Converters::class)
+abstract class AppDatabase : RoomDatabase() {
+    abstract fun favoriteMovieDao(): MovieDetailsDao
 }

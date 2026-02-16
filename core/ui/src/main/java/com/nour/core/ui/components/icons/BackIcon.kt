@@ -5,27 +5,29 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
-import com.nour.core.ui.extensions.onClick
 
 @Composable
 fun BackIcon(modifier: Modifier = Modifier, iconTint: Color = MaterialTheme.colorScheme.onBackground, onClick: () -> Unit) {
 
     val onBackPressedDispatcher = LocalOnBackPressedDispatcherOwner.current?.onBackPressedDispatcher
 
-    Icon(
-        Icons.AutoMirrored.Filled.ArrowBack,
-        contentDescription = null,
-        modifier = modifier
-            .size(24.dp)
-            .onClick {
-                onBackPressedDispatcher?.onBackPressed()
-                onClick()
-            },
-        tint = iconTint
-    )
+    IconButton(
+        onClick = {
+            onBackPressedDispatcher?.onBackPressed()
+            onClick()
+        }
+    ) {
+        Icon(
+            Icons.AutoMirrored.Filled.ArrowBack,
+            contentDescription = null,
+            modifier = modifier.size(24.dp),
+            tint = iconTint
+        )
+    }
 }
