@@ -95,7 +95,6 @@ fun FeaturedMovieCard(
                     )
                     RateCard(
                         voteAverage = movie.voteAverage,
-                        voteCount = movie.voteCount
                     )
                 }
             }

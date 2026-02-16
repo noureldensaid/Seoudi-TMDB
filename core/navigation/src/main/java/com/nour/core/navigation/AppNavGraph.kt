@@ -61,7 +61,6 @@ fun AppNavGraph(
 
     ) {
         mainFlowNavigation(
-            navController = navController,
             isLoading = isLoading,
             errorFlow = errorFlow,
             onRetry = onRetry

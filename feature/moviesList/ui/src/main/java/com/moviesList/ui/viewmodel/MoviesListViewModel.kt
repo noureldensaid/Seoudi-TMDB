@@ -1,6 +1,5 @@
 package com.moviesList.ui.viewmodel
 
-import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.movieDetails.ui.navigation.MovieDetailsRoute
@@ -20,7 +19,6 @@ import kotlinx.coroutines.launch
 class MoviesListViewModel(
     private val navigator: Navigator,
     private val getPopularMoviesUseCase: GetPopularMoviesUseCase,
-    private val savedStateHandle: SavedStateHandle
 ) : ViewModel() {
 
     var state: MutableStateFlow<MoviesListScreenState> = MutableStateFlow(MoviesListScreenState())

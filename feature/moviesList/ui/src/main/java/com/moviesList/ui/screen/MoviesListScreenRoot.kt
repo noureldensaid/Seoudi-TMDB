@@ -1,8 +1,11 @@
 package com.moviesList.ui.screen
 
 import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.navigationBars
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
@@ -35,14 +38,16 @@ fun MoviesListScreenRoot(
             }
             else -> {
                 PaginatedLazyColumn(
-                    modifier = Modifier.fillMaxSize(),
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .windowInsetsPadding(WindowInsets.navigationBars),
                     items = state.movies,
                     keySelector = { it.id },
                     listState = lazyListState,
                     isAppending = state.isAppending,
                     isEndReached = state.endReached,
                     contentPadding = PaddingValues(
-                        vertical = 14.dp + paddingValues.calculateTopPadding(),
+                        vertical = 14.dp,
                         horizontal = 14.dp
                     ),
                     onLoadMore = {

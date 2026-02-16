@@ -1,7 +1,6 @@
 package com.movieDetails.ui.navigation
 
 import androidx.navigation.NavGraphBuilder
-import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
 import com.movieDetails.ui.screen.MovieDetailsScreen
 import com.movieDetails.ui.viewModel.MovieDetailsViewModel
@@ -15,13 +14,13 @@ import org.koin.androidx.compose.koinViewModel
 data class MovieDetailsRoute(val id: Int) : Route
 
 fun NavGraphBuilder.movieDetailsNavGraph(
-    navController: NavHostController,
     isLoading: (show: Boolean) -> Unit,
     errorFlow: (error: Flow<ResponseState.Error>) -> Unit,
     onRetry: (() -> Unit) -> Unit,
 ) {
     composable<MovieDetailsRoute> { backStackEntry ->
-        val viewModel: MovieDetailsViewModel = koinViewModel(viewModelStoreOwner = backStackEntry)
+
+    val viewModel: MovieDetailsViewModel = koinViewModel(viewModelStoreOwner = backStackEntry)
 
         MovieDetailsScreen(
             viewModel = viewModel,
