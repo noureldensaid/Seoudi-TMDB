@@ -12,6 +12,7 @@ import com.movieDetails.ui.navigation.MovieDetailsRoute
 import com.nour.core.common.result.ResponseState
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
@@ -42,19 +43,21 @@ class MovieDetailsViewModel(
 
     private fun getMovieDetails() {
         viewModelScope.launch {
-            state.update { it.copy(isLoading = false) }
+            state.update { it.copy(isLoading = true) }
             val movieId = savedStateHandle.toRoute<MovieDetailsRoute>().id
             when (val movieDetailsResponse = getMovieDetailsUseCase(movieId)) {
-                is ResponseState.Error -> _errorFlow.send(movieDetailsResponse)
+                is ResponseState.Error -> {
+                    state.update { it.copy(isLoading = false) }
+                    _errorFlow.send(movieDetailsResponse)
+                }
                 is ResponseState.Success -> {
-                    movieDetailsResponse.data.collect { movieDetails ->
+                    movieDetailsResponse.data.collectLatest { movieDetails ->
                         state.update {
-                            it.copy(movie = movieDetails)
+                            it.copy(movie = movieDetails, isLoading = false)
                         }
                     }
                 }
             }
-            state.update { it.copy(isLoading = false) }
         }
     }
 

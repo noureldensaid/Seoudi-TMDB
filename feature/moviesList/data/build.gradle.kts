@@ -47,6 +47,16 @@ dependencies {
 
     implementation(libs.bundles.ktor)
 
+    // Testing
+    testImplementation(kotlin("test"))
+    testImplementation(libs.junit)
+    testImplementation(libs.kotlinx.coroutines.test)
+    testImplementation(libs.mockk)
+    testImplementation(libs.truth)
+    testImplementation(libs.turbine)
+    testImplementation(libs.androidx.junit)
+
+
     implementation(project(":core:common"))
     implementation(project(":core:network"))
     implementation(project(":feature:moviesList:domain"))
