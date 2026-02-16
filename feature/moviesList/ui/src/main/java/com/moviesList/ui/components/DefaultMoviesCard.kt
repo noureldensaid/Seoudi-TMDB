@@ -62,7 +62,6 @@ fun DefaultMoviesCard(
 
                 RateCard(
                     voteAverage = movie.voteAverage,
-                    voteCount = movie.voteCount
                 )
 
                 DefaultText(

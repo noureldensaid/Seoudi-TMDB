@@ -30,21 +30,24 @@ class MovieDetailsViewModel(
     val errorFlow = _errorFlow.receiveAsFlow()
 
     init {
-        getMovieDetails()
+        val movieId = savedStateHandle.get<Int>(KEY_MOVIE_ID)
+            ?: savedStateHandle.toRoute<MovieDetailsRoute>().id.also {
+                savedStateHandle[KEY_MOVIE_ID] = it
+            }
+        getMovieDetails(movieId)
     }
 
     fun onEvent(event: MovieDetailsScreenEvents) {
         when (event) {
-            is MovieDetailsScreenEvents.GetMovieDetails -> getMovieDetails()
+            is MovieDetailsScreenEvents.GetMovieDetails -> getMovieDetails(state.value.movie.id)
             is MovieDetailsScreenEvents.OnToggleFavorite -> toggleFavorite(event.movieId, event.isFavorite)
         }
     }
 
 
-    private fun getMovieDetails() {
+    private fun getMovieDetails(movieId: Int) {
         viewModelScope.launch {
             state.update { it.copy(isLoading = true) }
-            val movieId = savedStateHandle.toRoute<MovieDetailsRoute>().id
             when (val movieDetailsResponse = getMovieDetailsUseCase(movieId)) {
                 is ResponseState.Error -> {
                     state.update { it.copy(isLoading = false) }
@@ -66,4 +69,9 @@ class MovieDetailsViewModel(
             toggleFavoriteUseCase(movieId, isFav)
         }
     }
+
+    companion object {
+        private const val KEY_MOVIE_ID = "movie_id"
+    }
+
 }
