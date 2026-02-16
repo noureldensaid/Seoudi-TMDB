@@ -21,6 +21,7 @@ import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.movieDetails.domain.model.MovieDetailsModel
 import com.nour.core.ui.components.asyncImage.PosterImage
@@ -83,4 +84,16 @@ fun MovieDetailsHeader(
                 )
         )
     }
+}
+
+@Preview
+@Composable
+private fun MovieDetailsHeaderPreview() {
+    MovieDetailsHeader(
+        movie = MovieDetailsModel(
+            originalTitle = "The Movie Title",
+            title = "The Movie Title",
+        ),
+        onToggleFavorite = {}
+    )
 }

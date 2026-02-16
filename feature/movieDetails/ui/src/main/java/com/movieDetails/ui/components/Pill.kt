@@ -5,6 +5,7 @@ import androidx.compose.material3.AssistChipDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
 import com.nour.core.ui.components.text.DefaultText
 
@@ -29,5 +30,14 @@ fun Pill(text: String, emphasized: Boolean = false) {
             )
         },
         colors = colors
+    )
+}
+
+@Preview
+@Composable
+private fun PillPreview() {
+    Pill(
+        text = "Pill",
+        emphasized = true
     )
 }

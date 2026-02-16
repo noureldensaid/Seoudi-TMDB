@@ -7,7 +7,10 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material3.AssistChip
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.nour.core.ui.components.text.DefaultText
@@ -15,7 +18,7 @@ import com.nour.core.ui.components.text.DefaultText
 @Composable
 fun ChipsSection(
     title: String,
-    icon: androidx.compose.ui.graphics.vector.ImageVector,
+    icon: ImageVector,
     values: List<String>
 ) {
     if (values.isEmpty()) return
@@ -40,4 +43,14 @@ fun ChipsSection(
             }
         }
     }
+}
+
+@Preview
+@Composable
+private fun ChipsSectionPreview() {
+    ChipsSection(
+        title = "Genres",
+        icon = ImageVector.vectorResource(id = com.nour.core.ui.R.drawable.ic_image_placeholder),
+        values = listOf("Action")
+    )
 }
