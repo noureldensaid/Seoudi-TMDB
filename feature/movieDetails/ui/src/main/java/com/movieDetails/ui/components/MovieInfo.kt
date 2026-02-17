@@ -31,7 +31,7 @@ fun MovieInfo(
     ) {
         DefaultText(
             text = title,
-            maxLines = 2,
+            maxLines = 3,
             fontSize = 24.sp,
             fontWeight = FontWeight.Bold,
             color = MaterialTheme.colorScheme.onSurface

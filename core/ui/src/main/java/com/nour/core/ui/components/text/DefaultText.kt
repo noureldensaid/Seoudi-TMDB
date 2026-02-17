@@ -31,7 +31,7 @@ fun DefaultText(
     minLines: Int = 1,
     onTextLayout: ((TextLayoutResult) -> Unit)? = null,
     style: TextStyle = TextStyle(
-        lineHeight = 16.sp,
+        lineHeight = 20.sp,
         fontWeight = fontWeight,
         fontFamily = AppTypography.bodyMedium.fontFamily,
         platformStyle = PlatformTextStyle(includeFontPadding = false),
